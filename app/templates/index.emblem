@@ -1,2 +1,2 @@
 each
-  this.html
+  w-widget x=this.position.x y=this.position.y contents=this.contents

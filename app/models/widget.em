@@ -3,8 +3,6 @@
 class Widget extends DS.Model
   contents: DS.attr 'string'
   position: DS.attr()
-  html: ~>
-    Ember.String.htmlSafe "<span style=\"position:fixed;left:#{ @position.x }px; top:#{ @position.y }px\">#{@contents}</span>"
 
 Widget.reopenClass
   FIXTURES: [{
