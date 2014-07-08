@@ -1,4 +1,4 @@
-= input#magicBar type="text" placeholder="type, friend" action="create"
+= input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar
 
 each
   w-widget x=this.position.x y=this.position.y contents=this.contents action="delete" param=this
