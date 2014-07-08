@@ -1,1 +1,4 @@
-contents
+.widget-header
+  button{action delete} X
+.widget-body
+  contents

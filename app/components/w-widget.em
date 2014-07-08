@@ -11,7 +11,11 @@ class WWidgetComponent extends Ember.Component
     x = e.clientX
     y = e.clientY
     @x = x
-    # TODO: why do we need to translate y by 30?
-    @y = y - 30
+    # TODO: why do we need to translate y
+    @y = y - 52
+
+  actions:
+    delete: ->
+      @sendAction 'action', @param
 
 `export default WWidgetComponent`
