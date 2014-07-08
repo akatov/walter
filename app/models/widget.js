@@ -20,6 +20,4 @@ Widget.reopenClass({
   }]
 });
 
-// Photo.adapter = Ember.FixtureAdapter.create();
-
 export default Widget;

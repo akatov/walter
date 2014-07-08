@@ -10,8 +10,6 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
-// App.ApplicationAdapter = DS.FixtureAdapter.create();
-
 loadInitializers(App, 'walter');
 
 export default App;
