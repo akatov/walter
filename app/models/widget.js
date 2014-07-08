@@ -4,7 +4,14 @@ var Widget = DS.Model.extend({
   contents: DS.attr('string'),
   position: DS.attr(),
   html: function(){
-    return Ember.String.htmlSafe('<span style="left:' + this.get('position.x') + ';">' + this.get('contents') + '</span>')
+    return Ember.String.htmlSafe(
+      '<span style="position:fixed;left:'
+        + this.get('position.x')
+        + 'px; top:'
+        + this.get('position.y')
+        + 'px">'
+        + this.get('contents')
+        + '</span>')
   }.property('contents', 'position')
 });
 
