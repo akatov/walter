@@ -4,4 +4,4 @@ div.widget-body{bind-attr class="editable::hidden"}
   = textarea value=contents
   button{action "save"} Save
 div.widget-body{bind-attr class="editable:hidden"}
-  contents
+  = markdown-to-html contents

@@ -9,6 +9,8 @@ app.import({
   production: 'vendor/jqueryui/jquery-ui.min.js'
 });
 
+app.import('vendor/markdown/lib/markdown.js');
+
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
