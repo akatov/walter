@@ -3,12 +3,14 @@ class WLinkComponent extends Ember.Component
   classNames: ['link']
   attributeBindings: ['style']
   style: ~>
-    s = @param.source.position
-    x1 = s.x
-    y1 = s.y
-    t = @param.target.position
-    x2 = t.x
-    y2 = t.y
+    src = @param.source
+    spos = src.position
+    x1 = spos.x    
+    y1 = spos.y
+    trg = @param.target
+    tpos = trg.position
+    x2 = tpos.x
+    y2 = tpos.y
     length = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2))
     angle  = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI
     transform = "rotate(#{ angle }deg)"

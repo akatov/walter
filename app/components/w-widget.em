@@ -7,13 +7,20 @@ class WWidgetComponent extends Ember.Component
     "top:#{ @y }px; left:#{ @x }px;"
 
   didInsertElement: ->
+
+    @param.oHeight = @$().outerHeight()
+    @param.oWidth = @$().outerWidth()
+
+    onDragOrStop = (event,ui) => 
+      o = ui.offset
+      @x = o.left
+      @y = o.top
+
     @$().draggable
       handle: '.widget-header'
       cancel: '.widget-header button'
-      stop: (event, ui) =>
-        o = ui.offset
-        @x = o.left
-        @y = o.top
+      drag: onDragOrStop
+      stop: onDragOrStop
 
   actions:
     delete: ->
