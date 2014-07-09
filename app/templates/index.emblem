@@ -1,4 +1,7 @@
 = input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar
 
-each
+each widgets
   w-widget x=this.position.x y=this.position.y contents=this.contents action="delete" param=this
+
+each links
+  w-link param=this
