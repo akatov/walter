@@ -1,6 +1,7 @@
 .widget-header doubleClick="edit"
   button{action delete} X
 div.widget-body{bind-attr class="editable::hidden"}
-  = input value=contents action="save"
+  = textarea value=contents
+  button{action "save"} Save
 div.widget-body{bind-attr class="editable:hidden"}
   contents
