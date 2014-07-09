@@ -1,18 +1,18 @@
 class WWidgetComponent extends Ember.Component
   tagName: 'div'
   classNames: ['widget']
-  attributeBindings: ['style', 'draggable']
-  draggable: 'true'
+  attributeBindings: ['style']
   style: ~>
     "top:#{ @y }px; left:#{ @x }px;"
 
-  dragEnd: (ev) ->
-    e = ev.originalEvent
-    x = e.clientX
-    y = e.clientY
-    @x = x
-    # TODO: why do we need to translate y
-    @y = y - 52
+  didInsertElement: ->
+    @$().draggable
+      handle: '.widget-header'
+      cancel: '.widget-header button'
+      stop: (event, ui) =>
+        o = ui.offset
+        @x = o.left
+        @y = o.top
 
   actions:
     delete: ->

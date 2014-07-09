@@ -4,6 +4,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
+app.import({
+  development: 'vendor/jqueryui/jquery-ui.js',
+  production: 'vendor/jqueryui/jquery-ui.min.js'
+});
+
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
