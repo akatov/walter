@@ -1,4 +1,5 @@
 class WWidgetComponent extends Ember.Component
+  editable: false
   tagName: 'div'
   classNames: ['widget']
   attributeBindings: ['style']
@@ -17,5 +18,9 @@ class WWidgetComponent extends Ember.Component
   actions:
     delete: ->
       @sendAction 'action', @param
+    save: ->
+      @editable = false
+    edit: ->
+      @editable = true
 
 `export default WWidgetComponent`

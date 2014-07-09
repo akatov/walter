@@ -12,3 +12,7 @@ html, body {
   background-color: gray;
   text-align: right;
 }
+
+.hidden {
+  display: none;
+}

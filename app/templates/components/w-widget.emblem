@@ -1,4 +1,6 @@
-.widget-header
+.widget-header doubleClick="edit"
   button{action delete} X
-.widget-body
+div.widget-body{bind-attr class="editable::hidden"}
+  = input value=contents action="save"
+div.widget-body{bind-attr class="editable:hidden"}
   contents
