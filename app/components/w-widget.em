@@ -9,23 +9,15 @@ class WWidgetComponent extends Ember.Component
     @param.set("oHeight",oH)
     oW = @$().outerWidth()
     @param.set("oWidth",oW) 
+
+  focusOnTextarea:->
+    @$("textarea").focus()
  
-  updateDimentions:(-> 
-    #TODO: understand why timeout is necessary 
-    #TODO: try using "Ember.run.once" instead 
-    setTimeout(((that)->
-      #TODO: understand why '@fetchDimentions' didn't do it
-      ()->that.fetchDimentions()
-      )(@),10)
-    ).observes('editable')
-
-  focusOnTextarea:(->
+  onEditableChange:(-> 
+    Ember.run.later(@,"fetchDimentions",10)
     if @editable
-      setTimeout(((that)->
-        ()->that.$("textarea").focus()
-        )(@),10)
+      Ember.run.later(@,"focusOnTextarea",10)
     ).observes('editable')
-
 
   style: ~>
     "top:#{ @y }px; left:#{ @x }px;"
