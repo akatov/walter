@@ -37,6 +37,12 @@ class WWidgetComponent extends Ember.Component
       drag: onDragOrStop
       stop: onDragOrStop
 
+    #TODO: find a better to capture when textarea is resized
+    @$("textarea").on("mousemove",((that)->
+      #TODO: understand why '@fetchDimentions' didn't do it
+      ()->that.fetchDimentions()
+      )(@))
+
   actions:
     delete: ->
       @sendAction 'action', @param
