@@ -19,6 +19,14 @@ class WWidgetComponent extends Ember.Component
       )(@),10)
     ).observes('editable')
 
+  focusOnTextarea:(->
+    if @editable
+      setTimeout(((that)->
+        ()->that.$("textarea").focus()
+        )(@),10)
+    ).observes('editable')
+
+
   style: ~>
     "top:#{ @y }px; left:#{ @x }px;"
 
