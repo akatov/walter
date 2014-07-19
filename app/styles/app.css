@@ -25,3 +25,11 @@ html, body {
   border: 1px black solid;
   -webkit-transform-origin: 0 0;
 }
+
+#home li:after {
+  content: ','
+}
+
+#home li:last-of-type:after {
+  content:'.'
+}

@@ -1,7 +1,9 @@
-p This is home... 
-
-div = title
-
-ul
-	each word in buzzwords
-		li = word
+#home.container
+	div.jumbotron.text-center
+		h1 = title
+		p.lead = subtitle
+		ul.list-inline.bg-primary
+			each word in buzzwords
+				li.buzzword = word
+		p because...
+				
