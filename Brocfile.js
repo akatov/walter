@@ -10,6 +10,9 @@ app.import({
 });
 
 app.import('vendor/markdown/lib/markdown.js');
+app.import('vendor/bootstrap/dist/css/bootstrap.css');
+app.import('vendor/ember-addons.bs_for_ember/dist/js/bs-core.min.js')
+app.import('vendor/ember-addons.bs_for_ember/dist/js/bs-alert.min.js')
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
