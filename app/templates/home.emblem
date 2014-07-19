@@ -1,0 +1,7 @@
+p This is home... 
+
+div = title
+
+ul
+	each word in buzzwords
+		li = word
