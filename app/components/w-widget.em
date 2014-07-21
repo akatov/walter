@@ -1,8 +1,12 @@
 class WWidgetComponent extends Ember.Component
-  editable: false
+
   tagName: 'div'
+
   classNames: ['widget']
+
   attributeBindings: ['style']
+
+  editable: false
 
   fetchDimentions: ->
     oH = @$().outerHeight()
@@ -12,12 +16,12 @@ class WWidgetComponent extends Ember.Component
 
   focusOnTextarea:->
     @$("textarea").focus()
- 
-  onEditableChange:(-> 
+
+  +observer editable
+  onEditableChange: ->
     Ember.run.later(@,"fetchDimentions",10)
     if @editable
       Ember.run.later(@,"focusOnTextarea",10)
-    ).observes('editable')
 
   style: ~>
     "top:#{ @y }px; left:#{ @x }px;"
