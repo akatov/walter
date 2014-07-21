@@ -1,8 +1,7 @@
 import { test, moduleForModel } from 'ember-qunit';
 
 moduleForModel('link', 'Link', {
-  // Specify the other units that are required for this test.
-  needs: []
+  needs: ['model:board', 'model:widget']
 });
 
 test('it exists', function() {
