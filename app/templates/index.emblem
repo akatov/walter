@@ -2,6 +2,3 @@
 
 each children
   w-widget x=position.x y=position.y contents=contents action="delete" param=this
-
-/ each links
-  / w-link param=this

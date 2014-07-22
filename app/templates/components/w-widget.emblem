@@ -5,3 +5,7 @@ div.widget-body{bind-attr class="editable::hidden"}
   button{action "save"} Save
 div.widget-body{bind-attr class="editable:hidden"}
   = markdown-to-html contents
+
+if displayChildrenLinks
+  each child in param.children
+    w-link source=param target=child

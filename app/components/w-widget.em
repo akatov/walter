@@ -24,6 +24,9 @@ class WWidgetComponent extends Ember.Component
   style: ~>
     "top:#{ @y }px; left:#{ @x }px;"
 
+  displayChildrenLinks: ~>
+    @param.type == 'widget'
+
   didInsertElement: ->
 
     @fetchDimentions()
