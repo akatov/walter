@@ -5,7 +5,15 @@ moduleForComponent 'w-link', 'WLinkComponent', {}
 test 'it renders', ->
   expect 2
 
-  component = @subject()
+  component = @subject
+    source:
+      position:
+        x: 100
+        y: 100
+    target:
+      position:
+        x: 200
+        y: 200
   equal component.state, 'preRender'
 
   @append()
