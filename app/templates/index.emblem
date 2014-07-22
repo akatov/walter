@@ -1,4 +1,4 @@
 = input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar
 
 each children
-  w-widget x=position.x y=position.y contents=contents action="delete" param=this
+  w-widget action="delete" param=this

@@ -8,6 +8,18 @@ class WWidgetComponent extends Ember.Component
 
   editable: false
 
+  x: (k, v) ~>
+    @param.position.x = v if v
+    @param.position.x
+
+  y: (k, v) ~>
+    @param.position.y = v if v
+    @param.position.y
+
+  contents: (k, v) ~>
+    @param.contents = v if v
+    @param.contents
+
   fetchDimentions: ->
     @param.oHeight = @$().outerHeight()
     @param.oWidth = @$().outerWidth()
