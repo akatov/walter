@@ -1,8 +1,6 @@
 `import { test, moduleForModel } from 'ember-qunit'`
 
-moduleForModel 'widget', 'Widget', {
-  needs: ['model:board', 'model:link']
-}
+moduleForModel 'widget', 'Widget', {}
 
 test 'it exists', ->
   expect 1
