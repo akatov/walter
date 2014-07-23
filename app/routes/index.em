@@ -1,13 +1,13 @@
 class IndexRoute extends Ember.Route
 
   model: ->
-    @store.find 'widget', 1
+    @store.find 'node', 1
 
   position: 110
 
   actions:
 
-    delete: (widget) ->
-      widget.deleteRecord()
+    delete: (node) ->
+      node.deleteRecord()
 
 `export default IndexRoute`

@@ -1,13 +1,13 @@
 `import DS from 'ember-data'`
 
-class Widget extends DS.Model
+class Node extends DS.Model
   type: DS.attr 'string'
-  parent: DS.belongsTo 'widget', inverse: 'children'
-  children: DS.hasMany 'widget', async: true, inverse: 'parent'
+  parent: DS.belongsTo 'node', inverse: 'children'
+  children: DS.hasMany 'node', async: true, inverse: 'parent'
   contents: DS.attr 'string'
   position: DS.attr()
 
-Widget.reopenClass
+Node.reopenClass
   FIXTURES: [{
     id: 1
     type: 'board'
@@ -31,4 +31,4 @@ Widget.reopenClass
     position: { x: 100, y: 200, z: 0, s: 1 }
   }]
 
-`export default Widget`
+`export default Node`

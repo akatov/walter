@@ -8,7 +8,7 @@ class IndexController extends Ember.ObjectController
 
     create: ->
       board = @content
-      @store.createRecord('widget', {
+      @store.createRecord('node', {
         type: 'widget'
         parent: board
         contents: @magicBar

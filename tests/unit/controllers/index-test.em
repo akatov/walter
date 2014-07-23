@@ -1,7 +1,7 @@
 `import { test, moduleFor } from 'ember-qunit'`
 
 moduleFor 'controller:index', 'IndexController', {
-  needs: ['model:widget']
+  needs: ['model:node']
 }
 
 test 'it exists', ->

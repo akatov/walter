@@ -1,6 +1,6 @@
 `import { test, moduleForModel } from 'ember-qunit'`
 
-moduleForModel 'widget', 'Widget', {}
+moduleForModel 'node', 'Node', {}
 
 test 'it exists', ->
   expect 1
