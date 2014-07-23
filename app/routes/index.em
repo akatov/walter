@@ -8,6 +8,7 @@ class IndexRoute extends Ember.Route
   actions:
 
     delete: (node) ->
+      node?.parent?.children?.removeObject node
       node.deleteRecord()
 
 `export default IndexRoute`
