@@ -37,7 +37,7 @@ class WWidgetComponent extends Ember.Component
     "top:#{ @y }px; left:#{ @x }px;"
 
   displayChildrenLinks: ~>
-    @param.type == 'widget'
+    @param.kind == 'widget'
 
   didInsertElement: ->
 
