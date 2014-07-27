@@ -6,13 +6,19 @@
     "doc": "doc",
     "test": "test"
   },
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "scripts": {
     "postinstall": "bower install",
     "start": "ember server",
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "https://github.com/stefanpenner/ember-cli",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:akatov/walter.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
