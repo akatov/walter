@@ -7,6 +7,15 @@ class Node extends DS.Model
   contents: DS.attr 'string'
   position: DS.attr()
 
+  didLoad: ->
+    Node.position = Node.position + 10
+    @position = {
+      x: 10 + Node.position
+      y: 5 * Node.position
+    }
+
+Node.position = 0
+
 Node.reopenClass
   FIXTURES: [{
     id: 1

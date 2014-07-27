@@ -9,3 +9,4 @@ div.widget-body{bind-attr class="editable:hidden"}
 if displayChildrenLinks
   each child in param.children
     w-link source=param target=child
+    w-widget action="delete" param=child
