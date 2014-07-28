@@ -1,9 +1,14 @@
 /* jshint node: true */
 
+var PROC_ENV = process.env;
+
+/**
+ the `environment` variable is read either from `--environment` ember-cli flag
+ or the `EMBER_ENV` environment variable */
 module.exports = function(environment) {
   var ENV = {
     environment: environment,
-    baseURL: '/',
+    baseURL: PROC_ENV['BASE_URL'] || '/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -11,14 +16,15 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
+    backend: PROC_ENV['API_URL'],
+    ENV: PROC_ENV['EMBER_ENV'] || 'fixtures',
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
   };
 
-  if (environment === 'development') {
+  if (environment === 'development' || environment === 'fixtures') {
     // LOG_MODULE_RESOLVER is needed for pre-1.6.0
     ENV.LOG_MODULE_RESOLVER = true;
 

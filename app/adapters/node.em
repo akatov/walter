@@ -1,9 +1,12 @@
 `import DS from 'ember-data'`
-ENV = window.WalterENV
+WalterENV
 
-class NodeAdapter extends DS.ActiveModelAdapter
-  host: ENV.backend
-  buildURL: (r, s) ->
-    "#{ @_super r, s }.json"
+if WalterENV.ENV == 'fixtures'
+  class NodeAdapter extends DS.FixtureAdapter
+else
+  class NodeAdapter extends DS.ActiveModelAdapter
+    host: WalterENV.backend
+    buildURL: (r, s) ->
+      "#{ @_super r, s }.json"
 
 `export default NodeAdapter`

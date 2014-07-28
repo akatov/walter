@@ -16,28 +16,29 @@ class Node extends DS.Model
 
 Node.position = 0
 
-Node.reopenClass
-  FIXTURES: [{
-    id: 1
-    kind: 'board'
-    parent: null
-    children: [2, 3]
-    contents: 'my board'
-    position: null
-  }, {
-    id: 2
-    kind: 'widget'
-    parent: 1
-    children: [3]
-    contents: 'the first widget'
-    position: { x: 100, y: 100, z: 0, s: 1 }
-  }, {
-    id: 3
-    kind: 'widget'
-    parent: 2
-    children: []
-    contents: 'this is the second widget'
-    position: { x: 100, y: 200, z: 0, s: 1 }
-  }]
+if WalterENV.ENV == 'fixtures'
+  Node.reopenClass
+    FIXTURES: [{
+      id: 1
+      kind: 'board'
+      parent: null
+      children: [2, 3]
+      contents: 'my board'
+      position: null
+    }, {
+      id: 2
+      kind: 'widget'
+      parent: 1
+      children: [3]
+      contents: 'the first widget'
+      position: { x: 100, y: 100, z: 0, s: 1 }
+    }, {
+      id: 3
+      kind: 'widget'
+      parent: 2
+      children: []
+      contents: 'this is the second widget'
+      position: { x: 100, y: 200, z: 0, s: 1 }
+    }]
 
 `export default Node`
