@@ -1,7 +1,8 @@
 `import DS from 'ember-data'`
+ENV = window.WalterENV
 
 class NodeAdapter extends DS.ActiveModelAdapter
-  host: 'http://localhost:3000'
+  host: ENV.backend
   buildURL: (r, s) ->
     "#{ @_super r, s }.json"
 
