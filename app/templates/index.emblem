@@ -1,4 +1,5 @@
-= input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar
+h1 My Boards
 
-each children
-  w-widget action="delete" param=this
+ul
+  each this
+    li = link-to 'board' this | #{ title }

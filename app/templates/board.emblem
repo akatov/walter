@@ -1,3 +1,5 @@
+h1 = title
+
 = input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar
 
 each children

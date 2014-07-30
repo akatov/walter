@@ -1,4 +1,4 @@
-class IndexController extends Ember.ObjectController
+class IndexController extends Ember.ArrayController
 
   magicBar: ''
 

@@ -1,4 +1,6 @@
 mixin Board
-  board: true
+  title: (k, v) ~>
+    @contents = v if v
+    @contents
 
 `export default Board`
