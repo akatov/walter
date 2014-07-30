@@ -3,5 +3,6 @@ class Router extends Ember.Router
 
 Router.map ->
   @route 'home'
+  @resource 'board', path: '/board/:board_id'
 
 `export default Router`
