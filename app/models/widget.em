@@ -1,5 +1,4 @@
 `import DS from 'ember-data'`
-`import Model from 'walter/models/model'`
 
 class Widget extends DS.Model
 

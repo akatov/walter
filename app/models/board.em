@@ -1,7 +1,6 @@
 `import DS from 'ember-data'`
-`import Model from 'walter/models/model'`
 
-class Board extends Model
+class Board extends DS.Model
 
   title: DS.attr 'string'
   widgets: DS.hasMany 'widget', async: true, inverse: 'board'

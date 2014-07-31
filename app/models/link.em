@@ -1,7 +1,6 @@
 `import DS from 'ember-data'`
-`import Model from 'walter/models/model'`
 
-class Link extends Model
+class Link extends DS.Model
 
   source: DS.belongsTo 'widget'
   target: DS.belongsTo 'widget'

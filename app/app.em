@@ -1,5 +1,9 @@
 `import Resolver from 'ember/resolver'`
 `import loadInitializers from 'ember/load-initializers'`
+`import DS from 'ember-data'`
+
+DS.Model.reopen
+  logger: Ember.Logger
 
 Ember.MODEL_FACTORY_INJECTIONS = true
 
