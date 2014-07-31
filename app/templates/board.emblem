@@ -4,6 +4,3 @@ h1 = title
 
 each widgets
   w-widget action="delete" param=this
-
-each links
-  w-link param=this
