@@ -1,8 +1,5 @@
 class BoardRoute extends Ember.Route
 
-  model: (params) ->
-    @store.find 'node', params.board_id
-
   position: 110
 
   actions:

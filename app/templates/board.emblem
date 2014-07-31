@@ -2,5 +2,8 @@ h1 = title
 
 = input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar
 
-each children
+each widgets
   w-widget action="delete" param=this
+
+each links
+  w-link param=this

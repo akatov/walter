@@ -1,7 +1,7 @@
 class IndexRoute extends Ember.Route
 
   model: ->
-    @store.find 'node', kind: 'board'
+    @store.findAll 'board'
 
   position: 110
 
