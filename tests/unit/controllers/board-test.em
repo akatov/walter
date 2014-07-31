@@ -1,6 +1,6 @@
 `import { test, moduleFor } from 'ember-qunit'`
 
-moduleFor 'controller:index', 'IndexController', {
+moduleFor 'controller:board', 'BoardController', {
   needs: ['model:board']
 }
 

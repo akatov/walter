@@ -1,8 +1,8 @@
-`import Board from 'walter/models/board'`
+`import { test, moduleForModel } from 'ember-qunit'`
 
-module 'Board'
+moduleForModel 'model:board', 'Board', {}
 
 test 'it works', ->
-  BoardObject = Ember.Object.extend Board
-  subject = BoardObject.create()
-  ok subject
+  expect 1
+  model = @subject()
+  ok model

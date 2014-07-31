@@ -4,8 +4,8 @@
 class Widget extends DS.Model
 
   board: DS.belongsTo 'board', async: true, inverse: 'widgets'
-  outgoing: DS.attr 'link', async: true, inverse: 'source'
-  incoming: DS.attr 'link', async: true, inverse: 'target'
+  outgoing: DS.hasMany 'link', async: true, inverse: 'source'
+  incoming: DS.hasMany 'link', async: true, inverse: 'target'
   contents: DS.attr 'string'
   position: DS.attr()
 

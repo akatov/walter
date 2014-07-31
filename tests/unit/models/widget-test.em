@@ -1,8 +1,8 @@
-`import Widget from 'walter/models/widget'`
+`import { test, moduleForModel } from 'ember-qunit'`
 
-module 'Widget'
+moduleForModel 'model:widget', 'Widget', {}
 
 test 'it works', ->
-  WidgetObject = Ember.Object.extend Widget
-  subject = WidgetObject.create()
-  ok subject
+  expect 1
+  model = @subject()
+  ok model
