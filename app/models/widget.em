@@ -8,7 +8,7 @@ class Widget extends DS.Model
 
   owner: DS.belongsTo 'user', async: true, inverse: 'questions'
 
-  votes: DS.hasMany 'vote', async: true, inverse: 'question'
+  votes: DS.hasMany 'vote', async: true, inverse: 'widget'
 
   outgoing: DS.hasMany 'link', async: true, inverse: 'source'
 

@@ -8,6 +8,8 @@ class User extends DS.Model
 
   questions: DS.hasMany 'widget', async: true, inverse: 'owner'
 
+  votes: DS.hasMany 'vote', async: true, inverse: 'voter'
+
 if WalterENV.ENV == 'fixtures'
   User.reopenClass
     FIXTURES: [{

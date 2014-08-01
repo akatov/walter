@@ -4,7 +4,7 @@ class Vote extends DS.Model
 
   widget: DS.belongsTo 'widget', async: true, inverse: 'votes'
 
-  voter: DS.belongsTo 'user', async: true
+  voter: DS.belongsTo 'user', async: true, inverse: 'votes'
 
   value: DS.attr()
 
