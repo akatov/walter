@@ -2,8 +2,11 @@
 
 class Link extends DS.Model
 
-  source: DS.belongsTo 'widget'
-  target: DS.belongsTo 'widget'
+  board: DS.belongsTo 'board', async: true, inverse: 'links'
+
+  source: DS.belongsTo 'widget', async: true, inverse: 'outgoing'
+
+  target: DS.belongsTo 'widget', async: true, inverse: 'incoming'
 
   x1: ~> @source.x
   y1: ~> @source.y

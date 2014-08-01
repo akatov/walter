@@ -3,7 +3,9 @@
 class Board extends DS.Model
 
   title: DS.attr 'string'
+
   widgets: DS.hasMany 'widget', async: true, inverse: 'board'
+
   links: DS.hasMany 'link', async: true, inverse: 'board'
 
 if WalterENV.ENV == 'fixtures'

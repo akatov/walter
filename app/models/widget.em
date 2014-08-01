@@ -3,12 +3,17 @@
 class Widget extends DS.Model
 
   board: DS.belongsTo 'board', async: true, inverse: 'widgets'
+
   outgoing: DS.hasMany 'link', async: true, inverse: 'source'
+
   incoming: DS.hasMany 'link', async: true, inverse: 'target'
+
   contents: DS.attr 'string'
+
   position: DS.attr()
 
   x: ~> @position.x
+
   y: ~> @position.y
 
 if WalterENV.ENV == 'fixtures'
