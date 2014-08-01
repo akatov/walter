@@ -1,5 +1,8 @@
 class ApplicationController extends Ember.Controller
 
-  currentUser: null
+  currentSession: null
+
+  currentUser: ~>
+    @currentSession.user
 
 `export default ApplicationController`

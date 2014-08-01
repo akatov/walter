@@ -1,8 +1,7 @@
 class ApplicationRoute extends Ember.Route
 
   beforeModel: ->
-    dmitri = @store.find 'user', 2
-    @controllerFor('application').currentUser = dmitri
+    @controllerFor('application').currentSession = @store.find 'session', 1
 
   model: ->
     @store.findAll 'user'

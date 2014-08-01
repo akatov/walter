@@ -3,6 +3,7 @@
 class User extends DS.Model
 
   name: DS.attr 'string'
+
   avatar: DS.attr 'string' # Avatar URL
 
 if WalterENV.ENV == 'fixtures'
