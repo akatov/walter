@@ -6,14 +6,15 @@ test 'it renders', ->
   expect 2
 
   component = @subject
-    source:
-      position:
-        x: 100
-        y: 100
-    target:
-      position:
-        x: 200
-        y: 200
+    param:
+      source:
+        position:
+          x: 100
+          y: 100
+      target:
+        position:
+          x: 200
+          y: 200
   equal component.state, 'preRender'
 
   @append()
