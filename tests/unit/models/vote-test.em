@@ -1,7 +1,7 @@
 `import { test, moduleForModel } from 'ember-qunit'`
 
 moduleForModel 'vote', 'Vote', {
-  needs: []
+  needs: ['model:widget', 'model:user']
 }
 
 test 'it exists', ->
