@@ -2,7 +2,11 @@
 
 class Widget extends DS.Model
 
+  # widget for now is also a question
+
   board: DS.belongsTo 'board', async: true, inverse: 'widgets'
+
+  owner: DS.belongsTo 'user', async: true, inverse: 'questions'
 
   outgoing: DS.hasMany 'link', async: true, inverse: 'source'
 
@@ -21,12 +25,14 @@ if WalterENV.ENV == 'fixtures'
     FIXTURES: [{
       id: 1
       board: 1
-      contents: 'widget id 2'
+      owner: 1
+      contents: 'I think this board is awesome.'
       position: { x: 100, y: 100, z: 0, s: 1 }
     }, {
       id: 2
       board: 1
-      contents: 'widget id 3'
+      owner: 2
+      contents: 'I think Ember.JS is cool.'
       position: { x: 100, y: 200, z: 0, s: 1 }
     }]
 

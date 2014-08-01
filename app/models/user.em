@@ -6,6 +6,8 @@ class User extends DS.Model
 
   avatar: DS.attr 'string' # Avatar URL
 
+  questions: DS.hasMany 'widget', async: true, inverse: 'owner'
+
 if WalterENV.ENV == 'fixtures'
   User.reopenClass
     FIXTURES: [{

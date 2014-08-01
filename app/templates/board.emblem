@@ -1,6 +1,6 @@
 h1 = title
 
-= input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar
+= input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar disabled=loggedOut
 
 each widgets
   w-widget action="delete" param=this

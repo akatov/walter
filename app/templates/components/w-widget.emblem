@@ -1,4 +1,5 @@
 .widget-header doubleClick="edit"
+  img src=owner.avatar width="20" height="20"
   button{action delete} X
 div.widget-body{bind-attr class="editable::hidden"}
   = textarea value=contents

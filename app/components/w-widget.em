@@ -20,6 +20,9 @@ class WWidgetComponent extends Ember.Component
     @param.contents = v if v
     @param.contents
 
+  owner: ~>
+    @param.owner
+
   fetchDimentions: ->
     @param.oHeight = @$().outerHeight()
     @param.oWidth = @$().outerWidth()

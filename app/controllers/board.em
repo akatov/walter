@@ -1,5 +1,11 @@
 class BoardController extends Ember.ObjectController
 
+  needs: ['application']
+
+  currentUser: ~> @controllers.application.currentUser
+
+  loggedOut: ~> ! @controllers.application.loggedIn
+
   magicBar: ''
 
   position: 110
@@ -7,14 +13,17 @@ class BoardController extends Ember.ObjectController
   actions:
 
     create: ->
-      @store.createRecord('widget', {
-        board: @model
-        contents: @magicBar
-        position: { x: @position, y: @position }
-      }).save().then((widget) =>
+      @currentUser?.then((user) =>
+        @store.createRecord('widget', {
+          board: @model
+          owner: user
+          contents: @magicBar
+          position: { x: @position, y: @position }
+        }).save()
+      ).then((widget) =>
         @model.widgets.pushObject widget
+        @position = @position + 10
+        @magicBar = ''
       )
-      @position = @position + 10
-      @magicBar = ''
 
 `export default BoardController`
