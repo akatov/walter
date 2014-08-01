@@ -1,4 +1,7 @@
 link-to 'index'
   #title Walt.io
 
+with currentUser
+  img src=avatar width="64" height="64"
+
 outlet
