@@ -1,7 +1,19 @@
 link-to 'index'
   #title Walt.io
 
-with currentUser
-  img src=avatar width="64" height="64"
+if loggedIn
+
+  with currentUser
+    img src=avatar width="64" height="64"
+
+  button{action 'logout'} Logout
+
+else
+
+  | log in as
+
+  view Ember.Select content=this optionLabelPath="content.name" value=selectedUser
+
+  button{action 'login'} Login
 
 outlet
