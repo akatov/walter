@@ -1,22 +1,18 @@
 class IndexController extends Ember.ArrayController
 
-  magicBar: ''
+  needs: ['application']
 
-  position: 110
+  loggedIn: ~>
+    @controllers.application.loggedIn
+
+  newBoardName: null
 
   actions:
 
     create: ->
-      board = @content
-      @store.createRecord('node', {
-        kind: 'widget'
-        parent: board
-        contents: @magicBar
-        position: { x: @position, y: @position }
-      }).save().then((widget) ->
-        board.children.pushObject widget
-      )
-      @position = @position + 10
-      @magicBar = ''
+      @store.createRecord('board', {
+        title: @newBoardName
+      }).save().then (board) =>
+        @transitionToRoute 'board', board
 
 `export default IndexController`

@@ -3,3 +3,9 @@ h1 My Boards
 ul
   each this
     li = link-to 'board' this | #{ title }
+
+if loggedIn
+  ' Create New Board:
+  = input type="text" value=newBoardName placeholder="my new board"
+  if newBoardName
+    button{action create} New Board

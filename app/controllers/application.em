@@ -3,7 +3,7 @@ class ApplicationController extends Ember.ArrayController
   currentSession: null
 
   currentUser: ~>
-    @currentSession.user
+    @currentSession?.user
 
   loggedIn: ~>
     @currentSession != null
