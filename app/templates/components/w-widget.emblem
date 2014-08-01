@@ -6,6 +6,15 @@ div.widget-body{bind-attr class="editable::hidden"}
   button{action "save"} Save
 div.widget-body{bind-attr class="editable:hidden"}
   = markdown-to-html contents
+div.widget-votes
+  div.yes-votes
+    ' Yes:
+    = each param.yesVoters
+      img src=avatar width="20" height="20"
+  div.no-votes
+    ' No:
+    = each param.noVoters
+      img src=avatar width="20" height="20"
 
 if displayChildrenLinks
   each child in param.children
