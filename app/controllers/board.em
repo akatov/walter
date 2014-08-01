@@ -12,6 +12,10 @@ class BoardController extends Ember.ObjectController
 
   actions:
 
+    delete: (widget) ->
+      @model.widgets.removeObject widget
+      widget.destroyRecord()
+
     create: ->
       @currentUser?.then((user) =>
         @store.createRecord('widget', {
