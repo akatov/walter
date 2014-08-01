@@ -5,6 +5,16 @@
 DS.Model.reopen
   logger: Ember.Logger
 
+Ember.ObjectController.reopen
+  needs: ['application']
+  currentUser: ~> @controllers.application.currentUser
+  loggedOut: ~> ! @controllers.application.loggedIn
+
+Ember.ArrayController.reopen
+  needs: ['application']
+  currentUser: ~> @controllers.application.currentUser
+  loggedOut: ~> ! @controllers.application.loggedIn
+
 Ember.MODEL_FACTORY_INJECTIONS = true
 
 class App extends Ember.Application
