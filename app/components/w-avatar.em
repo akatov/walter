@@ -6,7 +6,12 @@ class WAvatarComponent extends Ember.Component
 
   attributeBindings: ['src','alt']
 
-  src: "bla"
-  alt: "some text...."
+  classNameBindings: ['size']
+
+  src: ~> @user.avatar
+
+  alt: ~> @user.name+" "+@size
+
+  # size: ~> @size
 
 `export default WAvatarComponent`

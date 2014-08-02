@@ -3,9 +3,7 @@ link-to 'index'
 
 if loggedIn
 
-  with currentUser
-    img src=avatar width="64" height="64"
-
+  w-avatar user=currentUser size="large"
   button{action 'logout'} Logout
 
 else

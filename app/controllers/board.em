@@ -1,5 +1,11 @@
 class BoardController extends Ember.ObjectController
 
+  needs: ['application']
+
+  currentUser: ~> @controllers.application.currentUser
+
+  loggedOut: ~> ! @controllers.application.loggedIn
+
   magicBar: ''
 
   position: 110
