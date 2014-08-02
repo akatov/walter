@@ -1,7 +1,7 @@
 `import { test, moduleForModel } from 'ember-qunit'`
 
 moduleForModel 'session', 'Session', {
-  needs: ['model:user']
+  needs: ['model:user', 'model:widget']
 }
 
 test 'it exists', ->

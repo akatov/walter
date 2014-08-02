@@ -1,7 +1,7 @@
 `import { test, moduleForModel } from 'ember-qunit'`
 
 moduleForModel 'widget', 'Widget', {
-  needs: ['model:board', 'model:link']
+  needs: ['model:board', 'model:link', 'model:user', 'model:vote']
 }
 
 test 'it works', ->
