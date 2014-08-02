@@ -1,4 +1,4 @@
-h1 = title
+h2 = title
 
 = input#magicBar type="text" placeholder="type, friend" action="create" value=magicBar disabled=loggedOut
 

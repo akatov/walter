@@ -2,6 +2,30 @@ html, body {
   margin: 0px;
 }
 
+/* base color used in topbar */
+$basecolor: #AD141E;
+
+#topbar {
+  height:54px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  background: $basecolor;
+  margin:4px;
+}
+
+#topleft {
+  a {
+    color:lighten($basecolor,40%);
+    font-size: 130%;
+  }
+}
+
+#main-area {
+  position: absolute;
+  top:54px;
+}
+
 .widget {
   position: absolute;
   border: 1px black solid;
@@ -34,6 +58,7 @@ html, body {
   content:'.'
 }
 
+
 .avatar {
 
   &.small {
@@ -44,6 +69,7 @@ html, body {
   &.large {
     width: 50px;
     height: 50px;
+    margin: 2px;
   }
 
 }

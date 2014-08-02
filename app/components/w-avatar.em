@@ -8,9 +8,9 @@ class WAvatarComponent extends Ember.Component
 
   classNameBindings: ['size']
 
-  src: ~> @user.avatar
+  src: ~> @user?.avatar
 
-  alt: ~> @user.name+" "+@size
+  alt: ~> @user?.name+" "+@size
 
   # size: ~> @size
 

@@ -1,17 +1,35 @@
-link-to 'index'
-  #title Walt.io
+/ inspired by: http://getbootstrap.com/examples/navbar-fixed-top/
 
-if loggedIn
+#topbar.navbar.navbar-default.navbar-fixed-top
+  div.container
 
-  w-avatar user=currentUser size="large"
-  button{action 'logout'} Logout
+    / show toggle button if window is too narrow
+    / TODO: fix or remove that... 
+    div.navbar-header
+      button.navbar-toggle data-toggle="collapse" data-target=".navbar-collapse"
+        span.sr-only Toogle Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
 
-else
+    #topleft.navbar-brand
+      link-to 'index'
+        #title Walt.io
 
-  | log in as
+    #topright
+      ul.nav.navbar-nav.navbar-right
+        li
+          if loggedIn
+            div.btn-group
+              button.btn{action 'logout'} 
+                = currentUser.name 
+          else
+            / view Ember.Select content=this optionLabelPath="content.name" value=selectedUser
+            div.btn-group
+              button.btn{action 'login'} Login
+        li
+          w-avatar user=currentUser size="large"
 
-  view Ember.Select content=this optionLabelPath="content.name" value=selectedUser
-
-  button{action 'login'} Login
-
-outlet
+#main-area
+  outlet
