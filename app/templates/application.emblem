@@ -1,35 +1,50 @@
 / inspired by: http://getbootstrap.com/examples/navbar-fixed-top/
 
-#topbar.navbar.navbar-default.navbar-fixed-top
-  div.container
+#topbar.navbar.navbar-default.navbar-fixed-top role="navigation"   
+  div.container    
 
-    / show toggle button if window is too narrow
-    / TODO: fix or remove that... 
-    div.navbar-header
-      button.navbar-toggle data-toggle="collapse" data-target=".navbar-collapse"
-        span.sr-only Toogle Navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
+    / navigation toogle button ... 
+      div.navbar-header
+        button.navbar-toggle data-toggle="collapse" data-target=".navbar-ex1-collapse"
+          span.sr-only Toogle Navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      div.navbar-collapse.collapse.navbar-ex1-collapse
+        ul.nav.navbar-nav
+          li 
+            a href='/board1' 
+              | board1
+          li 
+            a href='/board2' 
+              | board2
+    
+    ul.nav.navbar-nav.navbar-left
+      link-to 'index' classNames="navbar-brand"
+          | Walt.io
 
-    #topleft.navbar-brand
-      link-to 'index'
-        #title Walt.io
+    ul.nav.navbar-nav.navbar-center
+      form.navbar-form role="magic"
+        div#magicnav.input-group
+          input.form-control type="text" placeholder="this is meant to replace the magic bar..."
+          div.input-group-btn
+              button.btn.btn-default{action 'runmagic'}
+                / i.glyphicon.glyphicon-search
+                | go
 
-    #topright
-      ul.nav.navbar-nav.navbar-right
-        li
+    ul.nav.navbar-nav.navbar-right
+      li
+        form.navbar-form
           if loggedIn
-            div.btn-group
-              button.btn{action 'logout'} 
-                = currentUser.name 
+            button.navbutton.btn{action 'logout'} 
+              = currentUser.name 
           else
             view Ember.Select content=this optionLabelPath="content.name" value=selectedUser
             div.btn-group
-              button.btn{action 'login'} Login
-        li
-          w-avatar user=currentUser size="large"
+              button.navbutton.btn{action 'login'} Login
+      li
+        w-avatar user=currentUser size="large"
 
 #main-area
   outlet
