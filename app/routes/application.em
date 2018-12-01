@@ -7,4 +7,9 @@ class ApplicationRoute extends Ember.Route
   model: ->
     @store.findAll 'user'
 
+  actions:
+  	# TODO: implement this
+  	runmagic: ->
+  		alert("Not yet implemented")
+
 `export default ApplicationRoute`

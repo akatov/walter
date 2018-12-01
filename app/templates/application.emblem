@@ -1,19 +1,50 @@
-link-to 'index'
-  #title Walt.io
+/ inspired by: http://getbootstrap.com/examples/navbar-fixed-top/
 
-if loggedIn
+#topbar.navbar.navbar-default.navbar-fixed-top role="navigation"   
+  div.container    
 
-  with currentUser
-    img src=avatar width="64" height="64"
+    / navigation toogle button ... 
+      div.navbar-header
+        button.navbar-toggle data-toggle="collapse" data-target=".navbar-ex1-collapse"
+          span.sr-only Toogle Navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      div.navbar-collapse.collapse.navbar-ex1-collapse
+        ul.nav.navbar-nav
+          li 
+            a href='/board1' 
+              | board1
+          li 
+            a href='/board2' 
+              | board2
+    
+    ul.nav.navbar-nav.navbar-left
+      link-to 'index' classNames="navbar-brand"
+          | Walt.io
 
-  button{action 'logout'} Logout
+    ul.nav.navbar-nav.navbar-center
+      form.navbar-form role="magic"
+        div#magicnav.input-group
+          input.form-control type="text" placeholder="this is meant to replace the magic bar..."
+          div.input-group-btn
+              button.btn.btn-default{action 'runmagic'}
+                / i.glyphicon.glyphicon-search
+                | go
 
-else
+    ul.nav.navbar-nav.navbar-right
+      li
+        form.navbar-form
+          if loggedIn
+            button.navbutton.btn{action 'logout'} 
+              = currentUser.name 
+          else
+            view Ember.Select content=this optionLabelPath="content.name" value=selectedUser
+            div.btn-group
+              button.navbutton.btn{action 'login'} Login
+      li
+        w-avatar user=currentUser size="large"
 
-  | log in as
-
-  view Ember.Select content=this optionLabelPath="content.name" value=selectedUser
-
-  button{action 'login'} Login
-
-outlet
+#main-area
+  outlet

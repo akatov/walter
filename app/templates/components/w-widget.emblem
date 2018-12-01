@@ -1,5 +1,5 @@
 .widget-header doubleClick="edit"
-  img src=owner.avatar width="20" height="20"
+  w-avatar user=owner size="small"
   button{action delete} X
 div.widget-body{bind-attr class="editable::hidden"}
   = textarea value=contents
@@ -10,11 +10,11 @@ div.widget-votes
   div.yes-votes
     ' Yes:
     = each param.yesVoters
-      img src=avatar width="20" height="20"
+      w-avatar user=this size="small"
   div.no-votes
     ' No:
     = each param.noVoters
-      img src=avatar width="20" height="20"
+      w-avatar user=this size="small"
 
 if displayChildrenLinks
   each child in param.children
